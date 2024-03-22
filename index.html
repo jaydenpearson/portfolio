@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intitial-scale=1.0">
+        <title>Personal Portfolio Website - Jayden Pearson</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <h1 class="name-one"></h1>
+                    <!-- <img src="images/name.png" class="logo"> -->
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Projects</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <h1>Jayden Pearson</h1>
+                    <p>&emsp;&emsp;Computer Engineering Student at Texas A&M</p>
+                </div>
+            </div>
+        </div>
+        <!-- -----------about-------- -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <div class="zoom">
+                        <img src="images/portrait.jpeg">
+                    </div>
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Howdy, my name is Jayden Pearson and I am a student at Texas A&M University planning to complete my Master's Degree in Computer Engineering.</p>
+                        <a href="docs/Resume - Jayden Pearson.pdf" class="btn">Resume</a>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Proficient</span><br>C++, Python, Java, Arduino IDE</li>
+                                <li><span>Learning</span><br>HTML/CSS, JavaScript, Swift</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022-2027</span><br>Master of Science in Computer Engineering at Texas A&M University</li>
+                                <li><span>Awards and Scholarships</span><br>Texas A&M Regents' Scholar, Minnie Stevens Piper Foundation Scholar, Houston Livestock Show and Rodeo Scholar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------portfolio--------- -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Projects</h1>
+                <div class="services-list">
+                    <div class="zoom">
+                        <h2>Portfolio</h2>
+                        <p>Created a portfolio website using html and css</p>
+                        <a href="https://github.com/jaydenpearson/portfolio.git" class="btn">Code</a>
+                    </div>
+                    <div class="zoom">
+                        <h2>Digital Clock</h2>
+                        <p>Made a digital clock</p>
+                        <a href="#" class="btn">Code and Schematics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <!-- footer -->
+    <div class="text-center">
+        <footer class="bottom">MADE BY JAYDEN PEARSON</footer>
+    </div>
+    </body>
+</html>
