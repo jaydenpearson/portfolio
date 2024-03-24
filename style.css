@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Lucida Console', sans-serif;
     box-sizing: border-box;
+    letter-spacing: 1px;
 }
 /* scroll on menu-click */
 html{
@@ -12,48 +13,42 @@ body{
     background: #202020;
     color: #fff;
 }
+
+/* header */
 #header{
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     background: #181818;
-    /* background-image: url(images/dark-gray.png); */
     background-size: cover;
     background-position: center;
 }
-
 .name-one{
     color: #fff;
     font-size: 5em;
 }
-
 .container{
     padding: 10px 10%;
 }
-
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .logo{
     width: 140px;
 }
-
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
-
 nav ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
-
 nav ul li a::after{
     content: '';
     width: 0;
@@ -64,7 +59,6 @@ nav ul li a::after{
     bottom: -6px;
     transition: 0.5s;
 }
-
 nav ul li a:hover::after{
     width: 100%;
 }
@@ -81,18 +75,16 @@ nav ul li a:hover::after{
     margin-top: 5px;
 }
 
-/* ------------about------------ */
+/* about */
 #about{
     padding: 80px 0;
     color: #ababab;
 }
-
 .row{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .about-col-1{
     flex-basis: 35%;
 }
@@ -100,22 +92,22 @@ nav ul li a:hover::after{
     width: 100%;
     border-radius: 15px;
 }
-
 .about-col-2{
     flex-basis: 60%;
 }
-
+.about-col-2 p{
+    letter-spacing: 1px;
+    line-height: 20px;
+}
 .sub-title{
     font-size: 40px;
     font-weight: 600;
     color: #fff;
 }
-
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
 }
-
 .tab-links{
     margin-right: 50px;
     font-size: 18px;
@@ -133,11 +125,9 @@ nav ul li a:hover::after{
     bottom: -8px;
     transition: 0.5s;
 }
-
 .tab-links.active-link::after{
     width: 50%;
 }
-
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
@@ -154,17 +144,17 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/* ----------services----------- */
-#services{
+/* projects */
+#projects{
     padding: 30px 0;
 }
-.services-list{
+.projects-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.services-list div{
+.projects-list div{
     background: #262626;
     padding: 40px;
     font-size: 13px;
@@ -172,17 +162,30 @@ nav ul li a:hover::after{
     border-radius: 10px;
     transition: backgroun 0.5s, transform 0,5s;
 }
-.services-list div h2{
+.projects-list div h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
-.services-list div a{
+.projects-list div a{
     text-decoration: none;
     color: #fff;
     font-size: 12px;
     margin-top: 20px;
+    margin-bottom: 0px;
     display: inline-block;
+    letter-spacing: 1px;
+}
+.projects-list div p{
+    letter-spacing: 1px;
+    line-height: 17px;
+}
+h6{
+    font-size: large;
+    text-align: left;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 /* button and hover over button*/
@@ -201,7 +204,7 @@ nav ul li a:hover::after{
     background: #ff004f;
 }
 
-/* -------zoom on hover-------- */
+/* zoom on hover */
 .zoom{
     transition: transform 0.2s;
 }
@@ -209,7 +212,7 @@ nav ul li a:hover::after{
     transform: scale(1.1);
 }
 
-/* ------footer------- */
+/* footer */
 footer{
     font-size: 20px;
     font-weight: bold;
