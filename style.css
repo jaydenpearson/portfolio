@@ -78,10 +78,14 @@ nav ul li a:hover::after{
 #typed-text {
     border-right: 0.125rem solid #515151; /* Cursor effect */
     white-space: nowrap;
+    overflow-wrap: break-word;
     overflow: hidden;
     display: inline-block;
     padding-right: 0.625rem;
     animation: blink-cursor 1.5s step-end infinite;
+    max-width: 100%;
+    word-break: break-word;
+    line-height: 1.5;
 }
 /* Blinking cursor effect */
 @keyframes blink-cursor {
@@ -281,6 +285,10 @@ footer {
 
 /* Media Queries for iPhone screens */
 @media (max-width: 48rem) { /* 768px */
+    #typed-text {
+        font-size: 1.125rem;
+        max-width: 90%;
+    }
     .container {
         padding: 0.625rem 3.125rem; /* 10px 50px */
     }
