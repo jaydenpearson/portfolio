@@ -10,15 +10,16 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #202020;
+    background: #121212;
     color: #fff;
+    overflow-x: hidden;
 }
 
 /* header */
 #header{
     width: 100%;
-    height: 75vh;
-    background: #181818;
+    height: 100vh;
+    background: #121212;
     background-size: cover;
     background-position: center;
 }
@@ -53,7 +54,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #6EC9F8;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -73,6 +74,50 @@ nav ul li a:hover::after{
 .header-text p{
     font-size: 20px;
     margin-top: 5px;
+}
+#typed-text {
+    border-right: 2px solid #515151; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 10px;
+    animation: blink-cursor 1.5s step-end infinite;
+}
+/* Blinking cursor effect */
+@keyframes blink-cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+.header-icons {
+    margin-top: 40px;
+    display: flex;
+    gap: 35px;
+}
+
+.header-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.header-icons a i {
+    font-size: 50px; /* Size of the icons */
+    color: #6EC9F8; /* Default icon color */
+    transition: color 0.3s ease;
+}
+.header-icons a i.fa-svg {
+    color: #6EC9F8;
+}
+.header-icons a i.fa-github {
+    color: #6EC9F8; /* Ensure GitHub icon color is correct */
+}
+
+.header-icons a:hover i {
+    transform: scale(1.1); /* Slightly enlarges on hover */
+    color: #4da8e8
 }
 
 /* about */
@@ -119,7 +164,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #6EC9F8;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -134,7 +179,7 @@ nav ul li a:hover::after{
 }
 
 .tab-contents ul li span{
-    color: #b54769;
+    color: #6EC9F8;
     font-size: 14px;
 }
 .tab-contents{
@@ -193,7 +238,7 @@ h6{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #6EC9F8;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -201,7 +246,7 @@ h6{
     transition: background 0.5s;
 }
 .btn:hover{
-    background: #ff004f;
+    background: #6EC9F8;
 }
 
 /* zoom on hover */
@@ -211,6 +256,19 @@ h6{
 .zoom:hover{
     transform: scale(1.1);
 }
+
+/* Hidden by default */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* footer */
 footer{

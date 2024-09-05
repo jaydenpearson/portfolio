@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, intitial-scale=1.0">
         <title>Personal Portfolio Website - Jayden Pearson</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
     <body>
         <div id="header">
@@ -13,20 +14,28 @@
                 <nav>
                     <h1 class="name-one"></h1>
                     <!-- <img src="images/name.png" class="logo"> -->
-                    <ul>
+                    <!-- <ul>
                         <li><a href="#header">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#projects">Projects</a></li>
-                    </ul>
+                    </ul> -->
                 </nav>
                 <div class="header-text">
-                    <h1>Jayden Pearson</h1>
+                    <h1><span id="typed-text"></span></h1>
                     <p>&emsp;&emsp;Computer Engineering Student at Texas A&M</p>
+
+                    <div class="header-icons">
+                        <a href="mailto:jtpearson36@yahoo.com" target="_blank"><i class="fas fa-envelope" style="color: #6EC9F8;"></i></a>
+                        <a href="https://www.linkedin.com/in/jaydenpearson" target="_blank"><i class="fab fa-linkedin" style="color: #6EC9F8;"></i></a>
+                        <a href="https://github.com/jaydenpearson" target="_blank"><i class="fab fa-github" style="color: #6EC9F8;"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        
         <!-- -----------about-------- -->
-        <div id="about">
+        <div id="about" class="fade-in"">
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
@@ -44,8 +53,7 @@
                         </div>
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>Proficient</span><br>C++, Python, Java</li>
-                                <li><span>Learning</span><br>HTML/CSS, JavaScript, Swift</li>
+                                <li><span>Proficient</span><br>C++, Python, Java, JavaScript, React, HTML/CSS</li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="education">
@@ -60,7 +68,7 @@
         </div>
 
         <!-- ---------portfolio--------- -->
-        <div id="projects">
+        <div id="projects" class="fade-in">
             <div class="container">
                 <h1 class="sub-title">My Projects</h1>
                 <div class="projects-list">
@@ -104,6 +112,63 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
 
+    </script>
+
+    <script>
+    // Text to be typed out
+        const text = "Jayden Pearson ";
+        let index = 0;
+
+    // Function to simulate typing
+        function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typed-text").textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 150); // Adjust typing speed here
+        }
+    }
+
+    // Start the typing effect when the page loads
+        window.onload = typeEffect;
+    </script>
+
+    <script>
+        // Prevent automatic scrolling to anchors when the page loads
+        window.onload = function() {
+            window.scrollTo(0, 0); // Ensures the page stays at the top on load
+            typeEffect(); // Start the typing effect after ensuring scroll position
+        };
+    </script>
+
+    <script>
+                // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const elementHeight = rect.height;
+            const buffer = 0.1 * elementHeight; // 10% of the element's height
+
+            return (
+                rect.top + buffer <= windowHeight &&
+                rect.bottom - buffer >= 0
+            );
+        }
+
+        // Function to add the visible class to elements in viewport
+        function handleScroll() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check in case elements are already in the viewport on page load
+        window.addEventListener('load', handleScroll);
     </script>
 
     <!-- footer -->
