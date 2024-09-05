@@ -80,7 +80,7 @@ nav ul li a:hover::after{
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 0.625rem;
     animation: blink-cursor 1.5s step-end infinite;
 }
 /* Blinking cursor effect */
@@ -122,7 +122,7 @@ nav ul li a:hover::after{
 
 /* about */
 #about{
-    padding: 80px 0;
+    padding: 5rem 0;
     color: #ababab;
 }
 .row{
@@ -259,7 +259,7 @@ h6 {
 /* Hidden by default */
 .fade-in {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(3.125rem);
     transition: opacity 1s ease, transform 1s ease;
 }
 
