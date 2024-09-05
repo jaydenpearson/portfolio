@@ -286,7 +286,7 @@ footer {
 /* Media Queries for iPhone screens */
 @media (max-width: 48rem) { /* 768px */
     #typed-text {
-        font-size: 1.875rem;
+        font-size: 2.125rem;
         max-width: 90%;
     }
     .container {
